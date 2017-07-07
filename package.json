@@ -1,9 +1,9 @@
 {
-  "name": "tasks-playground",
-  "private": true,
+  "name": "emotional-player",
+  "private": false,
   "version": "1.0.0",
-  "description": "Example app to show the use of angular-ts-decorators",
-  "repository": "https://github.com/vsternbach/tasks-playground",
+  "description": "App for HackatonAI",
+  "repository": "https://github.com/vsternbach/emotional-player",
   "license": "MIT",
   "devDependencies": {
     "@types/angular": "^1.6.7",

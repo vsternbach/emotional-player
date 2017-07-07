@@ -1,0 +1,42 @@
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Emotional Player</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Help</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Task Lists</span>
+    <!--<task-lists on-selection-change="$ctrl.changeTasklist($event)"></task-lists>-->
+  </div>
+  <main ng-show="!$ctrl.loading" class="mdl-layout__content mdl-color--grey-100">
+
+    <!--<iframe id="sc-widget" ng-src="{{$ctrl.musicLink}}"-->
+            <!--width="640px" height="300" scrolling="yes" frameborder="no"></iframe>-->
+    <iframe id="sc-widget" height="360" style="width: 640px; display: inline-block"></iframe>
+    <div style="display: inline-block; cursor: pointer;" ng-click="$ctrl.takeSnapshot()">
+      <div id="webcam"></div>
+    </div>
+    <div>
+      <img ng-src="{{$ctrl.shot}}" alt="" width="320">
+      <ul class="demo-list-item mdl-list" style="display: inline-block;">
+        <li class="mdl-list__item" ng-repeat="emotion in $ctrl.emotions track by $index">
+          <i class="material-icons mdl-list__item-icon">person</i>
+          <span class="mdl-list__item-primary-content">{{ emotion | emotionFilter }}</span>
+        </li>
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content" ng-if="$ctrl.decision">Decision: {{ $ctrl.decision }}</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <div ng-show="$ctrl.loading" style="display: block; margin: auto auto">
+    <img style="width: 250px" src="https://loading.io/spinners/equalizer/index.equalizer-bars-loader.svg">
+  </div>
+</div>
